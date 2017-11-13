@@ -1,0 +1,18 @@
+{
+  "name": "ohboy",
+  "version": "1.0.0",
+  "description": "Here I go, reinventing the wheel again..",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "tape": "^4.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test"
+  },
+  "author": "",
+  "license": "ISC"
+}
