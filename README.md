@@ -22,7 +22,7 @@ where:
 A piece knows its upstream has no more data if it doesn't pass a `next` function.
 Generally only sinks act on this state, as upstream pieces won't be called once the sink knows there's nothing left to ask for.
 
-```
+```javascript
 var concat = (all = []) => next => produce => {
     next(produce && function(error, item, newNext){
 
@@ -40,7 +40,7 @@ var concat = (all = []) => next => produce => {
 
 A piece knows its downstream doesn't want any more data if it doesn't pass a `produce` function.
 
-```
+```javascript
 var limit = max => next => produce => {
     // something downstream doesn't want more data, just propagate that message upstream.
     if(!produce){
