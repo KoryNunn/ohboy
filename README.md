@@ -6,6 +6,8 @@ Here I go, reinventing the wheel again..
 
 mutationless lazy streaming.
 
+This module is just a way to join streams, the streams themselves are just a pattern, and require no library to use.
+
 pipeline methods are of the signature:
 
 ```javascript
@@ -13,9 +15,23 @@ pipeline methods are of the signature:
 ```
 
 where:
- - `(any...)` initialises a piece into its next state for producing a value
+ - `(any...)` Optional, initialises a piece into its next state for producing a value
  - `sourceNext(error, result, newNext)` is used to get the next value
  - `destination(error, result, newNext)` is used to pass a result (error or success) AND a method to call for the next value
+
+## Usage (of ohboy)
+
+[Working example]('./example/index.js)
+
+ohboy is used to join streams together:
+
+```js
+var ohboy = require('ohboy');
+
+var stream = ohboy([stream, stream, stream...]);
+```
+
+`stream` is just another `next => produce => ...` pattern function, and so, can be used in another stream
 
 ## Propagate end of stream
 
